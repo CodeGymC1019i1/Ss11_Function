@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>check The Number Of Occurrences Of A Symbol</title>
+</head>
+<body>
+<script>
+    let array = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'c', 'a', 'c'];
+
+    function checkTheNumberOfOccurrencesOfASymbol(arrayString, symbol) {
+        let i;
+        let count = 0;
+        for (i = 0; i < arrayString.length; i++)
+            if (arrayString[i] == symbol)
+                count++;
+
+        if ( count == 0)
+            return -1;
+        else
+            return count;
+    }
+
+    alert(checkTheNumberOfOccurrencesOfASymbol(array, 'a'));
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Name Of Constellation</title>
+</head>
+<body onload="findNamesConstellationOfStar(prompt('Mời bạn nhập tên ngôi sao: '))">
+
+<script>
+    let NameOfStar = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let NameOfConstellation = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+
+    function findNamesConstellationOfStar(searchingName) {
+        let i;
+
+        for (i=0; i<NameOfStar.length; i++)
+            if (searchingName == NameOfStar[i]) {
+                document.write('Tên chòm sao chứa '+ NameOfStar[i] +' là ' + NameOfConstellation[i]);
+                return NameOfConstellation[i];
+            }
+
+        alert('Xin lỗi, không tìm thấy tên ngôi sao trong dữ liệu.');
+    }
+
+</script>
+</body>
+</html>

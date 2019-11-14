@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Factorial</title>
+</head>
+<body>
+
+<script>
+    
+    function factorialOfANumber(number) {
+        let factorial = 1;
+        let i;
+
+        for (i=1; i<=number;i++)
+            factorial *= i;
+        return factorial;
+    }
+
+    alert('Giai thừa của số 19 là: '+ factorialOfANumber(19));
+</script>
+</body>
+</html>

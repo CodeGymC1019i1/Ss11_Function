@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>converter</title>
+</head>
+<body>
+<input type="number" id="amountConvert">
+<select id="selectList">
+    <option id="MeterToFeet">Meter to Feet</option>
+    <option id="FeetToMeter">Feet to Meter</option>
+</select>
+<input type="button" id="convert" value="Convert" onclick="displayResult()"><br>
+<input type="number" id="resultConvert" value="">
+
+<script>
+    let amountConvert = document.getElementById('amountConvert');
+
+    function converterFeetAndMeter() {
+        let i;
+        let typeConvert = document.getElementById('selectList').value;
+        let amount= parseFloat(amountConvert.value);
+
+        if (typeConvert == 'Feet to Meter')
+            return (0.305 * amount);
+        else
+            return  (3.279 * amount);
+    }
+
+    function displayResult() {
+        let result = converterFeetAndMeter();
+        document.getElementById("resultConvert").value = result;
+    }
+</script>
+</body>
+</html>
