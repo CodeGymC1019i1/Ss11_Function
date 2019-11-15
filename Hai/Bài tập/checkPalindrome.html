@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>check Palindrome</title>
+</head>
+<body>
+<script>
+
+    function isPalindrome(checkString) {
+        if (checkString[0] == checkString[checkString.length - 1] && checkString.length >= 1)
+            isPalindrome(checkString.substr(1,checkString.length - 2));
+        else
+            return false;
+        return true;
+    }
+
+    function init() {
+        let checkString = prompt('Mời bạn nhập chuỗi cần kiểm tra: ');
+
+        if (isPalindrome(checkString))
+            alert('Chuỗi '+ checkString + ' là chuỗi Palindrome.');
+        else
+            alert('Chuỗi '+ checkString + ' không là chuỗi Palindrome.');
+    }
+
+    init();
+
+</script>
+</body>
+</html>

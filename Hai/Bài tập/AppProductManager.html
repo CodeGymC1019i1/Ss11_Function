@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>App Product Manager</title>
+    <style>
+        div {
+            background-color: #e2eedd;
+            width: 25%;
+            padding-left: 15px;
+        }
+
+        div tr:nth-child(even) {
+            background: #ccc;
+        }
+
+        input{
+            border-radius: 10px;
+            height: 30px;
+        }
+
+        input.button {
+            background: #87ee53;
+            width: 50px;
+        }
+
+        th{
+            text-align: left;
+        }
+
+        th#amoutProduct{
+            color: red;
+            text-align: right;
+        }
+
+    </style>
+</head>
+<body>
+<h2>Add New Product</h2>
+<div>
+    <br>
+    <input type="text" id="NewProduct" placeholder="New Product">
+    <input type="button" class="button" value="Add" onclick="addProduct()">
+    <br> <br>
+</div>
+<h3>Display All Product</h3><br>
+<div id = 'ListProduct'></div>
+
+<script>
+    let ListProduct = ['Sony Xperia', 'Samsung Galaxy', 'Nokia6', 'Xiaomi Redmi Note 4',
+        'Apple Iphone 6S', 'Xiaomi Mi 5s Plus', 'Apple Iphone 8 Plus', 'Fujitsu F-04E', 'Oppo A71']
+
+    function initListProduct() {
+        let i;
+        let drawTable = "<table><tr><th colspan='2'>Product Name</th><th id='amoutProduct'>" + ListProduct.length +
+                        "products</th></tr>";
+
+        for (i = 0; i < ListProduct.length; i++) {
+            drawTable += "<tr><td>" + ListProduct[i] + "</td> " +
+                "<td><input type='button' class='button' value='Edit' onclick='editProduct(" + i +")'></td>" +
+                "<td><input type='button' class= 'button' value='Delete' onclick='deleteProduct(" + i + ")'></td></tr>";
+        }
+        drawTable += "</table>";
+        document.getElementById("ListProduct").innerHTML = drawTable;
+    }
+
+    function editProduct(positionProductEditted) {
+        let editName = prompt('Nhập tên chỉnh sửa: ');
+
+        ListProduct[positionProductEditted] = editName;
+        initListProduct();
+    }
+
+    function deleteProduct(positionProductDeleted) {
+        let i;
+
+        ListProduct.splice(positionProductDeleted,1);
+        initListProduct();
+    }
+
+    function addProduct() {
+        let i;
+        let NewProduct = document.getElementById("NewProduct");
+
+        ListProduct.push(NewProduct.value);
+        NewProduct.value ='';
+        initListProduct();
+    }
+
+    initListProduct();
+
+</script>
+</body>
+</html>

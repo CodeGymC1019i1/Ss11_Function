@@ -6,13 +6,17 @@
 </head>
 <body>
 <script>
-    let interger1, interger2;
+    let a = +prompt("Number 1:");
+    let b = +prompt("Number 2:");
 
-    function swap2Interger(number1, number2) {
-        let compt = interger1;
-        interger1 = interger2;
-        interger2 = compt;
+    function swap2Interger(num1,num2) {
+        let arr =[];
+        arr[0] = num2;
+        arr[1] = num1;
+        return arr;
     }
+    alert(swap2Interger(a,b));
+
 </script>
 </body>
 </html>
