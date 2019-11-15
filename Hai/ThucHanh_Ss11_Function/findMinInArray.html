@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Min In Array</title>
+</head>
+<body>
+
+<script>
+    let arr1 = [3, 5, 1, 8, -3, 7, 8];
+    let arr2 = [7, 12, 6, 9, 20, 56, 89];
+    let arr3 = [];
+    let arr4 = [0, 0, 0, 0, 0, 0];
+
+    function findMinInArray(arr) {
+        let i;
+        let Min = arr[0];
+
+        for (i=1; i < arr.length; i++) {
+            if ( arr[i] < Min)
+                Min = arr[i];
+        }
+
+        if (isNaN(Min))
+            Max = "Không có phần tử, không thể tìm Min."
+
+        return (Min);
+    }
+    
+    function main() {
+        alert('Mảng 1 có min là: ' + findMinInArray(arr1));
+        alert('Mảng 2 có min là: ' + findMinInArray(arr2));
+        alert('Mảng 3 có min là: ' + findMinInArray(arr3));
+        alert('Mảng 4 có min là: ' + findMinInArray(arr4));
+    }
+
+    main();
+</script>
+</body>
+</html>
